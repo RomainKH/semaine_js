@@ -243,44 +243,153 @@ main.child div#category div:hover {
 /*game-child*/
 
 main.child div#game {
-  width: 100%;
+  width: 99%;
   height: 750px;
 }
 
 main.child div#game div#play {
-  width: 71%;
+  width: 65%;
   height: 90%;
   float: left;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 60px;
 }
 
-main.child div#game div#play div.line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+
+main.child div#game div#play div {
+  width: 125px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: white;
   padding-left: 10px;
   margin-bottom: 20px;
 }
 
-main.child div#game div#play div.line div {
+main.child div#game div#play>h1 {
+  display: none;
+}
+
+main.child div#game div#play span {
+  display: none;
+}
+
+main.child div#game div#play div.icons_monster {
+  display: none;
+}
+
+main.child div#game div#play div.icons_social {
+  display: none;
+}
+
+main.child div#game div#play a {
+  display: none;
+}
+
+main.child div#game div#win {
+  width: 65%;
+  height: 87%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  background-color: #2C4DAA;
+  margin-left: 60px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main.child div#game div#win>h1 {
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+
+main.child div#game div#win span {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+main.child div#game div#win div.icons_monster {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   width: 150px;
-  height: 200px;
-  border-radius: 20px;
-  background-color: white;
+  margin: 0 auto;
+}
+
+main.child div#game div#win div.icons_monster div#icons_yellow-monster {
+  content: url(../images/yellow_monster.png);
+  height: 75px;
+}
+
+main.child div#game div#win div.icons_monster div#icons_green-monster {
+  content: url(../images/green_monster.png);
+  height: 75px;
+}
+
+main.child div#game div#win div.icons_social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 140px;
+  margin: 10px auto;
+}
+
+main.child div#game div#win div.icons_social div#icons_facebook {
+  content: url(../images/facebook.png);
+  height: 50px;
+}
+
+main.child div#game div#win div.icons_social div#icons_instagram {
+  content: url(../images/instagram.png);
+  height: 50px;
+}
+
+main.child div#game div#win div#replay a {
+  margin-top: 10px;
+  background-color: #F7BB21;
+  height: 65px;
+  width: 300px;
+  margin: 60px auto 0px auto;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 50px;
+  padding-top: 10px;
+}
+
+main.child div#game div#win div#replay a:hover {
+  background-color: #eb4d4b;
+  transition: background-color 0.1s ease-in;
 }
 
 main.child div#game div#informations {
   width: 23%;
-  height: 90%;
+  height: 70%;
   background-color: #F7BB21;
   border-radius: 20px;
   float: right;
-  border-right: 20px;
+  margin-top: 125px;
+  margin-right: 40px;
 }
 
 main.child div#game div#questions {
-  width: 100%;
+  width: 93%;
   height: 10%;
-  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 60px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+main.child div#game div#questions div {
+  background-color: #2C4DAA;
+  height: 50px;
+  width: 400px;
+  border-radius: 50px;
 }
 
 /*upload*/
