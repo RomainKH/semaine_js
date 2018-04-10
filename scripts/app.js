@@ -1,18 +1,20 @@
-const agesOne = document.getElementsByClassName('fiveEight')
-const agesTwo = document.getElementsByClassName('nineEleven')
-const agesThree = document.getElementsByClassName('twelveUp')
+let premier = new Array(), a=0, i = 1
 
-function loadPage(href){
-  let xmlhttp = new XMLHttpRequest()
-  xmlhttp.open("GET", href, false)
-  xmlhttp.send()
-  return xmlhttp.responseText
+while(premier.length <= 20)
+{
+  for (let j = 2;j<i;j++)
+  {
+    if (i%j == 0)
+    (
+      a++
+    )
+  }
+  if (a==0)
+  {
+    premier.push(i)
+  }
+  a = 0
+  i++
 }
-for (var i = 0; i < agesOne.length; i++) {
-  agesOne[i].addEventListener(
-    "click",
-    function(){
-      loadPage('pages/game-child.html')
-    }
-  )
-}
+
+console.log(premier)
