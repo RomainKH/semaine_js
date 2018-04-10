@@ -104,19 +104,31 @@ main.child {
 
 main.child div#age {
   text-align: center;
-  margin-top: 150px;
   font-size: 50px;
+}
+
+main.child div#age span {
+  margin-top: 100px;
+  display: block;
+}
+
+main.child div#age form {
+  margin: 70px auto 0 auto;
+  height: 100px;
+  width: 500px;
+  border-radius: 100px;
+  background-color: #F7BB21;
 }
 
 main.child div#age select {
   font-family: 'letters for learners';
   background-color: #F7BB21;
-  height: 100px;
-  width: 500px;
-  font-size: 40px;
+  width: 84%;
+  height: 100%;
+  font-size: 25px;
   color: white;
   border: 0px solid white;
-  margin-top: 40px;
+  cursor:pointer;
 }
 
 main.child div#monster {
@@ -147,6 +159,7 @@ main.child div#play.child a {
   justify-content: space-around;
   font-size: 50px;
   padding-top: 10px;
+  transition: background-color 0.1s ease-in;
 }
 
 main.child div#play.child a:hover {
@@ -164,6 +177,7 @@ main.child div#rules.child{
   display: flex;
   justify-content: space-around;
   padding-top: 10px;
+  transition: background-color 0.1s ease-in;
 }
 
 main.child div#rules.child:hover {
@@ -229,7 +243,7 @@ main.child div#category div {
   border-radius: 30px;
   text-align: center;
   font-size: 40px;
-  transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in color 0.1s ease-in;
+  transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in, color 0.1s ease-in;
 }
 
 main.child div#category div:hover {
@@ -265,6 +279,12 @@ main.child div#game div#play div {
   background-color: white;
   padding-left: 10px;
   margin-bottom: 20px;
+  transition: background-color 0.1s ease-in;
+}
+
+main.child div#game div#play div:hover {
+  background-color: #F7BB21;
+  transition: background-color 0.1s ease-in;
 }
 
 main.child div#game div#play>h1 {
@@ -390,6 +410,12 @@ main.child div#game div#questions div {
   height: 50px;
   width: 400px;
   border-radius: 50px;
+  transition: background-color 0.1s ease-in;
+}
+
+main.child div#game div#questions div:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
 }
 
 /*upload*/
@@ -546,6 +572,35 @@ MEDIA
     margin-bottom: 30px;
   }
 
+  main.child div#game div#play {
+    width: 100%;
+    padding-left: 5px;
+    float: none;
+  }
+
+  main.child div#game div#informations {
+    width: 100%;
+    height: 300px;
+    float: none;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+
+  main.child div#game div#questions {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+
+  main.child div#game div#win {
+    width: 100%;
+    height: 600px;
+    margin-left: 0px;
+    border-radius: 40px;
+    margin-bottom: 0px;
+  }
+
   main.child div#yellow_monster_hide {
     display: none;
   }
@@ -608,6 +663,27 @@ MEDIA
     background-color: white;
     width: 200px;
     height: 300px;
+  }
+
+  main.child div#game div#play {
+    width: 100%;
+    padding-left: 5px;
+    float: none;
+  }
+
+  main.child div#game div#informations {
+    width: 100%;
+    height: 300px;
+    float: none;
+    margin-top: 200px;
+    margin-bottom: 15px;
+  }
+
+  main.child div#game div#questions {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 40px;
   }
 
   main.child div#green_monster_hide {
