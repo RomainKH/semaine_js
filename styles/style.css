@@ -1,3 +1,531 @@
-*{
-  color: red;
+@font-face {
+  font-family: 'letters for learners';
+  src: url(../font/letters-for-learners.ttf);
+}
+
+@font-face {
+  font-family: 'futura';
+  src: url(../font/futura.ttc);
+}
+
+body.child{
+  background-color: #6886E0;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.clearboth {
+  clear: both;
+}
+
+/*
+
+HEADER
+
+*/
+
+header{
+  font-family: 'letters for learners';
+}
+
+header>h1 {
+  text-align: center;
+  font-size: 90px;
+  margin-top: 0px;
+}
+
+header>a {
+  font-size: 20px;
+}
+
+header>a:hover {
+  text-decoration: underline;
+}
+
+header div#icon_facebook {
+  content: url(../images/facebook.png);
+  position: fixed;
+  width: 30px;
+  top: 10px;
+  right: 10px;
+}
+
+header div#icon_instagram {
+  content: url(../images/instagram.png);
+  position: fixed;
+  width: 30px;
+  top: 10px;
+  right: 60px;
+}
+
+header div.big_title {
+  text-align: center;
+  line-height: 50px;
+}
+
+header div.big_title h1#title {
+  font-size: 100px;
+}
+
+header div.big_title h1#description {
+  font-size: 50px;
+}
+
+header div.small_title {
+  text-align: center;
+  line-height: 20px;
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+
+header div.small_title h2#title {
+  font-size: 50px;
+}
+
+header div.small_title h2#description {
+  font-size: 40px;
+}
+
+/*
+
+MAIN
+
+*/
+
+main.child {
+  font-family: 'letters for learners';
+}
+
+/*index*/
+
+main.child div#age {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 50px;
+}
+
+main.child div#age select {
+  font-family: 'letters for learners';
+  background-color: #F7BB21;
+  height: 100px;
+  width: 500px;
+  font-size: 40px;
+  color: white;
+  border: 0px solid white;
+  margin-top: 40px;
+}
+
+main.child div#monster {
+  content: url(../images/red_monster.png);
+  width: 200px;
+  position: fixed;
+  bottom: 10px;
+}
+
+main.child div#man {
+  content: url(../images/man.png);
+  width: 200px;
+  position: fixed;
+  bottom: 0px;
+  left: 200px;
+}
+
+/*home_page-child*/
+
+main.child div#play.child a {
+  margin-top: 10px;
+  background-color: #F7BB21;
+  height: 65px;
+  width: 300px;
+  margin: 150px auto 0px auto;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 50px;
+  padding-top: 10px;
+}
+
+main.child div#play.child a:hover {
+  background-color: #eb4d4b;
+  transition: background-color 0.1s ease-in;
+}
+
+main.child div#rules.child{
+  background-color: #2C4DAA;
+  height: 40px;
+  width: 200px;
+  margin: 50px auto 0px auto;
+  font-size: 30px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+main.child div#rules.child:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
+main.child div#red_monster {
+  content: url(../images/red_monster.png);
+  width: 250px;
+  position: fixed;
+  bottom: 10px;
+  transition: width 0.2s ease-in;
+}
+
+main.child div#red_monster:hover {
+  width: 275px;
+  transition: width 0.2s ease-in;
+}
+
+main.child div#yellow_monster {
+  content: url(../images/yellow_monster.png);
+  width: 250px;
+  position: fixed;
+  bottom: 10px;
+  left: 250px;
+  transition: width 0.2s ease-in;
+}
+
+main.child div#yellow_monster:hover {
+  width: 275px;
+  transition: width 0.2s ease-in;
+}
+
+main.child div#green_monster {
+  content: url(../images/green_monster.png);
+  width: 400px;
+  position: fixed;
+  bottom: 50px;
+  right: -100px;
+  transform: rotate(-45deg);
+  transition: width 0.2s ease-in;
+}
+
+main.child div#green_monster:hover {
+  width: 450px;
+  transition: width 0.2s ease-in;
+}
+
+/*category-child*/
+
+main.child div#category {
+  display: flex;
+  justify-content: space-around;
+  width: 1100px;
+  margin: 100px auto 0 auto;
+}
+
+main.child div#category div {
+  width: 300px;
+  height: 400px;
+  border: white 5px solid;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 40px;
+  transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in color 0.1s ease-in;
+}
+
+main.child div#category div:hover {
+  background-color: white;
+  width: 320px;
+  height: 420px;
+  color: #6886E0;
+  transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in, color 0.1s ease-in;
+}
+
+/*game-child*/
+
+main.child div#game {
+  width: 100%;
+  height: 750px;
+}
+
+main.child div#game div#play {
+  width: 71%;
+  height: 90%;
+  float: left;
+}
+
+main.child div#game div#play div.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+main.child div#game div#play div.line div {
+  width: 150px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+main.child div#game div#informations {
+  width: 23%;
+  height: 90%;
+  background-color: #F7BB21;
+  border-radius: 20px;
+  float: right;
+  border-right: 20px;
+}
+
+main.child div#game div#questions {
+  width: 100%;
+  height: 10%;
+  background-color: green;
+}
+
+/*upload*/
+
+main.child div#upload {
+  width: 800px;
+  height: 400px;
+  background-color: #F7BB21;
+  margin: auto;
+  padding: 30px;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 20px;
+  z-index: 1;
+}
+
+main.child div#red_monster_hide {
+  content: url(../images/red_monster.png);
+  width: 250px;
+  position: fixed;
+  bottom: 150px;
+  left: 150px;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+main.child div#yellow_monster_hide {
+  content: url(../images/yellow_monster.png);
+  width: 250px;
+  position: fixed;
+  bottom: 0px;
+  left: 550px;
+  transform: rotate(180deg);
+  transition: width 0.2s ease-in;
+  z-index: -1;
+}
+
+main.child div#green_monster_hide {
+  content: url(../images/green_monster.png);
+  width: 400px;
+  position: fixed;
+  bottom: 125px;
+  right: 100px;
+  transform: rotate(45deg);
+  transition: width 0.2s ease-in;
+  z-index: -1;
+}
+
+main.child div#upload h1 {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+main.child div#upload p {
+  margin-bottom: 100px;
+}
+
+main.child div#upload div#files {
+  display: flex;
+  justify-content: space-around;
+}
+
+main.child div#upload div#files div {
+  flex-direction: column;
+}
+
+main.child div#upload div#files div a {
+  background-color: #2C4DAA;
+  height: 30px;
+  width: 300px;
+  border-radius: 50px;
+  padding-top: 10px;
+  transition: background-color 0.1s ease-in;
+  display: block;
+  margin-top: 20px;
+}
+
+main.child div#upload div#files div form {
+  background-color: #2C4DAA;
+  height: 30px;
+  width: 300px;
+  border-radius: 50px;
+  padding-top: 10px;
+  transition: background-color 0.1s ease-in;
+  margin-top: 20px;
+}
+
+main.child div#upload div#files div a:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
+main.child div#upload div#files div form:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer {
+  font-family: 'letters for learners';
+  font-size: 20px;
+}
+
+footer div#footer{
+  width: 450px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer div#footer a:hover {
+  text-decoration: underline;
+}
+
+/*
+
+MEDIA
+
+*/
+
+@media screen and (max-width: 1000px) {
+  main.child div#yellow_monster {
+    display: none;
+  }
+
+  main.child div#green_monster {
+    width: 300px;
+    bottom: 120px;
+    right: -100px;
+  }
+
+  main.child div#category {
+    width: 700px;
+  }
+
+  main.child div#category div {
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  main.child div#category div:hover {
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  main.child div#yellow_monster_hide {
+    display: none;
+  }
+
+  main.child div#red_monster_hide {
+    bottom: 200px;
+  }
+
+  main.child div#upload {
+    width: 600px;
+  }
+
+  main.child div#upload div#files div a {
+    width: 290px;
+  }
+
+  main.child div#upload div#files div a {
+    width: 290px;
+  }
+
+  main.child div#upload div#files div form {
+    width: 290px;
+  }
+
+  main.child div#man {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.child div#red_monster {
+    width: 150px;
+    bottom: 10px;
+  }
+
+  main.child div#red_monster:hover {
+    width: 150px;
+  }
+
+  main.child div#green_monster:hover {
+    width: 300px;
+  }
+
+  main.child div#category {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: 100px auto 0 auto;
+  }
+
+  main.child div#category div {
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  main.child div#category div:hover {
+    background-color: white;
+    width: 200px;
+    height: 300px;
+  }
+
+  main.child div#green_monster_hide {
+    display: none;
+  }
+
+  main.child div#upload {
+    width: 400px;
+  }
+
+  main.child div#upload p {
+    margin-bottom: 50px;
+  }
+
+  main.child div#upload div#files {
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+
+  main.child div#upload div#files div {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  main.child div#monster {
+    bottom: 250px;
+    width: 150px;
+  }
 }

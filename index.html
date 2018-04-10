@@ -2,13 +2,56 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8"/>
-    <title>Bienvenue sur C'est qui qui ?</title>
-    <meta name="description" content="Ceci est la description de ma page"/>
+    <title>C'est qui qui ?</title>
+    <meta name="description" content="Le jeu Qui est-ce ? pour les  petits et les grands"/>
     <link rel="stylesheet" href="styles/style.css"/>
     <link rel="icon" type="image/png" href="favicon.png"/>
   </head>
-  <body>
-    <h1>Contenu de ma page</h1>
+  <body class="child">
+    <div class="container">
+      <header>
+        <div id="icon_facebook"></div>
+        <div id="icon_instagram"></div>
+        <div class="big_title">
+          <h1 id="title">C'est qui qui ?</h1>
+          <h1 id="description">C'est QuiQuiz !</h1>
+        </div>
+      </header>
+      <main class="child">
+        <div id="age">
+          <span>Un jeu pour tous les âges</span>
+          <form action="index.html" method="post">
+            <select name="age">
+              <option value="5">J'ai 5 ans </option>
+              <option value="6">J'ai 6 ans </option>
+              <option value="7">J'ai 7 ans </option>
+              <option value="8">J'ai 8 ans </option>
+              <option value="9">J'ai 9 ans </option>
+              <option value="10">J'ai 10 ans </option>
+              <option value="11">J'ai 11 ans </option>
+              <option value="12">J'ai 12 ans </option>
+              <option value="13">J'ai 13 ans </option>
+              <option value="14">J'ai 14 ans </option>
+              <option value="15">J'ai 15 ans </option>
+              <option value="16">J'ai 16 ans </option>
+              <option value="17">J'ai 17 ans </option>
+              <option value="18">J'ai 18 ans </option>
+              <option value="19">J'ai 19 ans </option>
+              <option value="20">J'ai 20 ans </option>
+            </select>
+          </form>
+        </div>
+        <div id="monster"></div>
+        <div id="man"></div>
+      </main>
+      <footer>
+        <div id="footer">
+          <span><a href="#">Qui qui sommes nous ?</a></span>
+          <span><a href="pages/upload.html">Créez votre jeu</a></span>
+          <span><a href="#">Mentions Légales</a></span>
+        </div>
+      </footer>
+    </div>
     <script src="scripts/app.js"></script>
   </body>
 </html>
