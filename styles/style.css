@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'letters for learners';
-  src: url(../font/letters-for-learners.ttf);
+  src: url(../fonts/letters-for-learners.ttf);
 }
 
 @font-face {
   font-family: 'futura';
-  src: url(../font/futura.ttc);
+  src: url(../fonts/futura.ttc);
 }
 
 body.child{
