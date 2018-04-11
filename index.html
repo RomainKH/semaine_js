@@ -21,18 +21,18 @@
         <div id="age">
           <span>Un jeu pour tous les âges</span>
           <form action="index.html" method="post">
-            <select name="age">
-              <option value="5">J'ai 5 ans </option>
-              <option value="6">J'ai 6 ans </option>
-              <option value="7">J'ai 7 ans </option>
-              <option value="8">J'ai 8 ans </option>
-              <option value="9">J'ai 9 ans </option>
-              <option value="10">J'ai 10 ans </option>
-              <option value="11">J'ai 11 ans </option>
-              <option value="12">J'ai 12 ans </option>
-              <option value="13">J'ai 13 ans </option>
-              <option value="14">J'ai 14 ans </option>
-              <option value="15">J'ai 15 ans </option>
+            <select name="age" onchange="document.location = this.options[this.selectedIndex].value;">
+              <option value="pages/home_page.html">J'ai 5 ans</option>
+              <option value="pages/home_page.html">J'ai 6 ans</option>
+              <option value="pages/home_page.html">J'ai 7 ans</option>
+              <option value="pages/home_page.html">J'ai 8 ans</option>
+              <option value="pages/home_page.html">J'ai 9 ans</option>
+              <option value="pages/home_page.html">J'ai 10 ans</option>
+              <option value="pages/home_page.html">J'ai 11 ans</option>
+              <option value="pages/home_page.html">J'ai 12 ans</option>
+              <option value="pages/home_page.html">J'ai 13 ans</option>
+              <option value="pages/home_page.html">J'ai 14 ans</option>
+              <option value="pages/home_page.html">J'ai 15 ans</option>
             </select>
           </form>
         </div>
@@ -40,7 +40,7 @@
         <div id="man"></div>
       </main>
       <footer>
-        <div id="footer">
+        <div id="footer" class="child">
           <span><a href="#">Qui qui sommes nous ?</a></span>
           <span><a href="pages/upload.html">Créez votre jeu</a></span>
           <span><a href="#">Mentions Légales</a></span>

@@ -13,6 +13,11 @@ body.child{
   color: white;
 }
 
+body.teen{
+  background-color: #F2F2F2;
+  color: black;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -38,11 +43,22 @@ header>h1 {
   margin-top: 0px;
 }
 
-header>a {
+header>a.child {
   font-size: 20px;
 }
 
-header>a:hover {
+header>a.child:hover {
+  text-decoration: underline;
+}
+
+header>a.teen {
+  font-size: 20px;
+  font-family: 'futura';
+  font-size: 15px;
+  color: black;
+}
+
+header>a.teen:hover {
   text-decoration: underline;
 }
 
@@ -56,6 +72,22 @@ header div#icon_facebook {
 
 header div#icon_instagram {
   content: url(../images/instagram.png);
+  position: fixed;
+  width: 30px;
+  top: 10px;
+  right: 60px;
+}
+
+header div#icon_facebook.teen {
+  content: url(../images/facebook_black.png);
+  position: fixed;
+  width: 30px;
+  top: 10px;
+  right: 10px;
+}
+
+header div#icon_instagram.teen {
+  content: url(../images/instagram_black.png);
   position: fixed;
   width: 30px;
   top: 10px;
@@ -98,6 +130,10 @@ MAIN
 
 main.child {
   font-family: 'letters for learners';
+}
+
+main.teen {
+  font-family: 'futura';
 }
 
 /*index*/
@@ -167,7 +203,7 @@ main.child div#play.child a:hover {
   transition: background-color 0.1s ease-in;
 }
 
-main.child div#rules.child{
+main.child div#rules.child a{
   background-color: #2C4DAA;
   height: 40px;
   width: 200px;
@@ -180,7 +216,7 @@ main.child div#rules.child{
   transition: background-color 0.1s ease-in;
 }
 
-main.child div#rules.child:hover {
+main.child div#rules.child a:hover {
   background-color: #130f40;
   transition: background-color 0.1s ease-in;
 }
@@ -227,6 +263,85 @@ main.child div#green_monster:hover {
   transition: width 0.2s ease-in;
 }
 
+main.teen div#play.teen a {
+  margin-top: 10px;
+  background-color: #84A58E;
+  height: 75px;
+  width: 300px;
+  margin: 150px auto 0px auto;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 50px;
+  padding-top: 0px;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#play.teen a:hover {
+  background-color: #eb4d4b;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#rules.teen a{
+  background-color: #A59595;
+  height: 50px;
+  width: 200px;
+  margin: 50px auto 0px auto;
+  font-size: 30px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#rules.teen a:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#red_monster {
+  content: url(../images/man_black.png);
+  width: 250px;
+  position: fixed;
+  bottom: 10px;
+  transition: width 0.2s ease-in;
+}
+
+main.teen div#red_monster:hover {
+  width: 260px;
+  transition: width 0.2s ease-in;
+}
+
+main.teen div#yellow_monster {
+  content: url(../images/man_white.png);
+  width: 150px;
+  position: fixed;
+  bottom: 10px;
+  left: 250px;
+  transition: width 0.2s ease-in;
+}
+
+main.teen div#yellow_monster:hover {
+  width: 175px;
+  transition: width 0.2s ease-in;
+}
+
+main.teen div#green_monster {
+  content: url(../images/man_ginger.png);
+  width: 400px;
+  position: fixed;
+  bottom: -500px;
+  right: -300px;
+  transform: rotate(-45deg);
+  transition: width 0.2s ease-in;
+}
+
+main.teen div#green_monster:hover {
+  width: 425px;
+  transition: width 0.2s ease-in;
+}
+
 /*category-child*/
 
 main.child div#category {
@@ -252,6 +367,42 @@ main.child div#category div:hover {
   height: 420px;
   color: #6886E0;
   transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in, color 0.1s ease-in;
+}
+
+main.child div#category div a {
+  height: 400px;
+  width: 300px;
+  display: block;
+}
+
+main.teen div#category {
+  display: flex;
+  justify-content: space-around;
+  width: 1100px;
+  margin: 100px auto 0 auto;
+}
+
+main.teen div#category div {
+  width: 300px;
+  height: 400px;
+  border: black 3px solid;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 40px;
+  transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in, color 0.1s ease-in;
+}
+
+main.teen div#category div:hover {
+  background-color: white;
+  width: 320px;
+  height: 420px;
+  transition: background-color 0.1s ease-in, width 0.1s ease-in, height 0.1s ease-in, color 0.1s ease-in;
+}
+
+main.teen div#category div a {
+  height: 400px;
+  width: 300px;
+  display: block;
 }
 
 /*game-child*/
@@ -285,6 +436,7 @@ main.child div#game div#play div {
 main.child div#game div#play div:hover {
   background-color: #F7BB21;
   transition: background-color 0.1s ease-in;
+  cursor: pointer;
 }
 
 main.child div#game div#play>h1 {
@@ -416,6 +568,172 @@ main.child div#game div#questions div {
 main.child div#game div#questions div:hover {
   background-color: #130f40;
   transition: background-color 0.1s ease-in;
+  cursor: pointer;
+}
+
+main.teen div#game {
+  width: 99%;
+  height: 750px;
+}
+
+main.teen div#game div#play {
+  width: 65%;
+  height: 90%;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 60px;
+}
+
+
+main.teen div#game div#play div {
+  width: 125px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: white;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  border: black solid 2px;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#game div#play div:hover {
+  background-color: #84A58E;
+  transition: background-color 0.1s ease-in;
+  cursor: pointer;
+}
+
+main.teen div#game div#play>h1 {
+  display: none;
+}
+
+main.teen div#game div#play span {
+  display: none;
+}
+
+main.teen div#game div#play div.icons_monster {
+  display: none;
+}
+
+main.teen div#game div#play div.icons_social {
+  display: none;
+}
+
+main.teen div#game div#play a {
+  display: none;
+}
+
+main.teen div#game div#win {
+  width: 65%;
+  height: 87%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  background-color: #2C4DAA;
+  margin-left: 60px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main.teen div#game div#win>h1 {
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+
+main.teen div#game div#win span {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+main.teen div#game div#win div.icons_monster {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 150px;
+  margin: 0 auto;
+}
+
+main.teen div#game div#win div.icons_monster div#icons_yellow-monster {
+  content: url(../images/yellow_monster.png);
+  height: 75px;
+}
+
+main.teen div#game div#win div.icons_monster div#icons_green-monster {
+  content: url(../images/green_monster.png);
+  height: 75px;
+}
+
+main.teen div#game div#win div.icons_social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 140px;
+  margin: 10px auto;
+}
+
+main.teen div#game div#win div.icons_social div#icons_facebook {
+  content: url(../images/facebook.png);
+  height: 50px;
+}
+
+main.teen div#game div#win div.icons_social div#icons_instagram {
+  content: url(../images/instagram.png);
+  height: 50px;
+}
+
+main.teen div#game div#win div#replay a {
+  margin-top: 10px;
+  background-color: #F7BB21;
+  height: 65px;
+  width: 300px;
+  margin: 60px auto 0px auto;
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 50px;
+  padding-top: 10px;
+}
+
+main.teen div#game div#win div#replay a:hover {
+  background-color: #eb4d4b;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#game div#informations {
+  width: 23%;
+  height: 70%;
+  background-color: #84A58E;
+  border-radius: 20px;
+  float: right;
+  margin-top: 125px;
+  margin-right: 40px;
+}
+
+main.teen div#game div#questions {
+  width: 93%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 60px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+main.teen div#game div#questions div {
+  background-color: #A59595;
+  height: 50px;
+  width: 400px;
+  border-radius: 50px;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#game div#questions div:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+  cursor: pointer;
 }
 
 /*upload*/
@@ -513,6 +831,93 @@ main.child div#upload div#files div form:hover {
   transition: background-color 0.1s ease-in;
 }
 
+main.teen div#upload {
+  width: 800px;
+  height: 400px;
+  background-color: #84A58E;
+  margin: auto;
+  padding: 30px;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 20px;
+  z-index: 1;
+  color: white;
+}
+
+main.teen div#red_monster_hide {
+  content: url(../images/man_black.png);
+  width: 250px;
+  position: fixed;
+  bottom: 60px;
+  left: 170px;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+main.teen div#yellow_monster_hide {
+  display: none;
+}
+
+main.teen div#green_monster_hide {
+  content: url(../images/man_ginger.png);
+  width: 200px;
+  position: fixed;
+  bottom: 100px;
+  right: 200px;
+  transform: rotate(45deg);
+  transition: width 0.2s ease-in;
+  z-index: -1;
+}
+
+main.teen div#upload h1 {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+main.teen div#upload p {
+  margin-bottom: 100px;
+}
+
+main.teen div#upload div#files {
+  display: flex;
+  justify-content: space-around;
+}
+
+main.teen div#upload div#files div {
+  flex-direction: column;
+}
+
+main.teen div#upload div#files div a {
+  background-color: #2C4DAA;
+  height: 40px;
+  width: 300px;
+  border-radius: 50px;
+  padding-top: 10px;
+  transition: background-color 0.1s ease-in;
+  display: block;
+  margin-top: 20px;
+}
+
+main.teen div#upload div#files div form {
+  background-color: #2C4DAA;
+  height: 40px;
+  width: 300px;
+  border-radius: 50px;
+  padding-top: 10px;
+  transition: background-color 0.1s ease-in;
+  margin-top: 20px;
+}
+
+main.teen div#upload div#files div a:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
+main.teen div#upload div#files div form:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
 /*
 
 FOOTER
@@ -524,7 +929,7 @@ footer {
   font-size: 20px;
 }
 
-footer div#footer{
+footer div#footer.child {
   width: 450px;
   position: fixed;
   bottom: 10px;
@@ -533,8 +938,28 @@ footer div#footer{
   justify-content: space-between;
 }
 
-footer div#footer a:hover {
+footer div#footer.child a:hover {
   text-decoration: underline;
+}
+
+footer div#footer.teen{
+  width: 450px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'futura';
+  font-size: 15px;
+}
+
+footer div#footer.teen a{
+  color: black;
+}
+
+footer div#footer.teen a:hover {
+  text-decoration: underline;
+  font-family: 'futura';
 }
 
 /*
@@ -606,6 +1031,91 @@ MEDIA
   }
 
   main.child div#red_monster_hide {
+    bottom: 200px;
+  }
+
+  main.child div#upload {
+    width: 600px;
+  }
+
+  main.child div#upload div#files div a {
+    width: 290px;
+  }
+
+  main.child div#upload div#files div a {
+    width: 290px;
+  }
+
+  main.child div#upload div#files div form {
+    width: 290px;
+  }
+
+  main.child div#man {
+    display: none;
+  }
+
+  main.teen div#yellow_monster {
+    display: none;
+  }
+
+  main.teen div#green_monster {
+    width: 125px;
+    bottom: 120px;
+    right: -100px;
+  }
+
+  main.teen div#category {
+    width: 700px;
+  }
+
+  main.teen div#category div {
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  main.teen div#category div:hover {
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  main.teen div#game div#play {
+    width: 100%;
+    padding-left: 5px;
+    float: none;
+  }
+
+  main.teen div#game div#informations {
+    width: 100%;
+    height: 300px;
+    float: none;
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+
+  main.teen div#game div#questions {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+
+  main.teen div#game div#win {
+    width: 100%;
+    height: 600px;
+    margin-left: 0px;
+    border-radius: 40px;
+    margin-bottom: 0px;
+  }
+
+  main.teen div#yellow_monster_hide {
+    display: none;
+  }
+
+  main.teen div#red_monster_hide {
     bottom: 200px;
   }
 
@@ -710,6 +1220,89 @@ MEDIA
   }
 
   main.child div#monster {
+    bottom: 250px;
+    width: 150px;
+  }
+
+  main.teen div#red_monster {
+    width: 150px;
+    bottom: 10px;
+  }
+
+  main.teen div#red_monster:hover {
+    width: 150px;
+  }
+
+  main.teen div#green_monster:hover {
+    width: 300px;
+  }
+
+  main.teen div#category {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: 100px auto 0 auto;
+  }
+
+  main.teen div#category div {
+    width: 200px;
+    height: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  main.teen div#category div:hover {
+    background-color: white;
+    width: 200px;
+    height: 300px;
+  }
+
+  main.teen div#game div#play {
+    width: 100%;
+    padding-left: 5px;
+    float: none;
+  }
+
+  main.teen div#game div#informations {
+    width: 100%;
+    height: 300px;
+    float: none;
+    margin-top: 475px;
+    margin-bottom: 15px;
+  }
+
+  main.teen div#game div#questions {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+
+  main.teen div#green_monster_hide {
+    display: none;
+  }
+
+  main.teen div#upload {
+    width: 400px;
+  }
+
+  main.teen div#upload p {
+    margin-bottom: 50px;
+  }
+
+  main.teen div#upload div#files {
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+
+  main.teen div#upload div#files div {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  main.teen div#monster {
     bottom: 250px;
     width: 150px;
   }
