@@ -544,6 +544,24 @@ main.child div#game div#informations {
   float: right;
   margin-top: 125px;
   margin-right: 40px;
+  font-size: 18px;
+}
+
+main.child div#game div#informations h2{
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+main.child div#game div#informations img{
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 40px auto;
+  display: block;
+}
+
+main.child div#game div#informations p{
+  margin: 0 40px;
 }
 
 main.child div#game div#questions {
@@ -630,11 +648,12 @@ main.teen div#game div#win {
   float: left;
   display: flex;
   flex-direction: column;
-  background-color: #2C4DAA;
+  background-color: #84A58E;
   margin-left: 60px;
   border-radius: 40px;
   margin-bottom: 20px;
   text-align: center;
+  color: white;
 }
 
 main.teen div#game div#win>h1 {
@@ -656,12 +675,12 @@ main.teen div#game div#win div.icons_monster {
 }
 
 main.teen div#game div#win div.icons_monster div#icons_yellow-monster {
-  content: url(../images/yellow_monster.png);
+  content: url(../images/man_ginger.png);
   height: 75px;
 }
 
 main.teen div#game div#win div.icons_monster div#icons_green-monster {
-  content: url(../images/green_monster.png);
+  content: url(../images/man_white.png);
   height: 75px;
 }
 
@@ -684,11 +703,10 @@ main.teen div#game div#win div.icons_social div#icons_instagram {
 }
 
 main.teen div#game div#win div#replay a {
-  margin-top: 10px;
-  background-color: #F7BB21;
-  height: 65px;
+  background-color: #2C4DAA;
+  height: 85px;
   width: 300px;
-  margin: 60px auto 0px auto;
+  margin: 40px auto 0px auto;
   border-radius: 100px;
   display: flex;
   justify-content: space-around;
@@ -709,6 +727,26 @@ main.teen div#game div#informations {
   float: right;
   margin-top: 125px;
   margin-right: 40px;
+}
+
+main.teen div#game div#informations h2{
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+main.teen div#game div#informations img{
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 40px auto;
+  display: block;
+}
+
+main.teen div#game div#informations p{
+  margin: 0 40px;
+  font-size: 14px;
+  color: white;
 }
 
 main.teen div#game div#questions {
