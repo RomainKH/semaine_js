@@ -42,22 +42,37 @@ let category = document.querySelector('#category'),
 if (localAge < 10){
   let themesJeune = ['alimentation','sports','animaux']
   let theme = document.querySelectorAll('#category div')
-
+  let number = ['un','deux','trois']
   for (var i = 0; i < themesJeune.length; i++) {
     let img = document.createElement('img')
+    let liens = document.createElement('a')
+    liens.setAttribute('class', number[i])
+    liens.setAttribute('href','game.html')
     img.setAttribute('src',`../images/${themesJeune[i]}.svg`)
     theme[i].setAttribute('id', themesJeune[i])
-    theme[i].appendChild(img)
+    theme[i].appendChild(liens)
+    liens.appendChild(img)
+
     }
   }
 
 
 
-
-
 else if (localAge >= 10){
-  let themesVieux = document.createElement('div')
+  let themesVieux = ['cinema','pays','rois']
+  let theme = document.querySelectorAll('#category div')
+  let number = ['un','deux','trois']
+  for (var i = 0; i < themesVieux.length; i++) {
+    let img = document.createElement('img')
+    let liens = document.createElement('a')
+    liens.setAttribute('class', number[i])
+    liens.setAttribute('href','game.html')
+    img.setAttribute('src',`../images/${themesVieux[i]}.svg`)
+    theme[i].setAttribute('id', themesVieux[i])
+    theme[i].appendChild(liens)
+    liens.appendChild(img)
 
+    }
 }
 
 let boutonUn = document.querySelector('#category div .un'),
