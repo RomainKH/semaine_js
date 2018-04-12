@@ -1,28 +1,152 @@
-let localThemes = localStorage.getItem('localThemes')
-if (localThemes == animaux) {
-  let animalsName = animals.
-}
-else if (localThemes == sports) {
-  let sportsName = sports.
-}
-else if (localThemes == alimentation) {
+let localTheme = localStorage.getItem('localThemes')
+console.log(localTheme)
 
+/***ON REGARDE EN FONCTION DU THEME CE QU'ON IMPORTE DE LA BASE DE DONNEES***/
+if (localTheme == '"animaux"') {
+  let animalName = animals.name
+  console.log(animalName)
+  animalName = JSON.stringify(animalName)
+  localStorage.setItem('localName', animalName)/**on stock les variables de json en local afin des les rappeler par la suite en fonction du thème**/
+  let animalDescription = animals.description
+  animalDescription = JSON.stringify(animalDescription)
+  localStorage.setItem('localDes', animalDescription)
+  let animalQuestion = animals.questions
+  animalQuestion = JSON.stringify(animalQuestion)
+  localStorage.setItem('localQuest', animalQuestion)
+  let animalKey = animals.keyWords
+  animalKey = JSON.stringify(animalKey)
+  localStorage.setItem('localKey', animalKey)
+  let animalDesKey = animals.descriptionKeyWords
+  animalDesKey = JSON.stringify(animalDesKey)
+  localStorage.setItem('localDesKey', animalDesKey)
+  let animalSources = animals.sources
+  animalSources = JSON.stringify(animalSources)
+  localStorage.setItem('localSource', animalSources)
 }
-else if (localThemes == cinema) {
-
+else if (localTheme == '"sports"') {
+  let sportsName = sports.name
+  sportsName = JSON.stringify(sportsName)
+  localStorage.setItem('localName', sportsName)
+  let sportsDescription = sports.description
+  sportsDescription = JSON.stringify(sportsDescription)
+  localStorage.setItem('localDes', sportsDescription)
+  let sportsQuestion = sports.questions
+  sportsQuestion = JSON.stringify(sportsQuestion)
+  localStorage.setItem('localQuest', sportsQuestion)
+  let sportsKey = sports.keyWords
+  sportsKey = JSON.stringify(sportsKey)
+  localStorage.setItem('localKey', sportsKey)
+  let sportsDesKey = sports.descriptionKeyWords
+  sportsDesKey = JSON.stringify(sportsDesKey)
+  localStorage.setItem('localDesKey', sportsDesKey)
+  let sportsSources = sports.sources
+  sportsSources = JSON.stringify(sportsSources)
+  localStorage.setItem('localSource', sportsSources)
 }
-else if (localThemes == pays) {
-
+else if (localTheme == '"alimentation"') {
+  let alimentationName = aliments.name
+  alimentationName = JSON.stringify(alimentationName)
+  localStorage.setItem('localName', alimentationName)
+  let alimentationDescription = aliments.description
+  alimentationDescription = JSON.stringify(alimentationDescription)
+  localStorage.setItem('localDes', alimentationDescription)
+  let alimentationQuestion = aliments.questions
+  alimentationQuestion = JSON.stringify(alimentationQuestion)
+  localStorage.setItem('localQuest', alimentationQuestion)
+  let alimentationKey = aliments.keyWords
+  alimentationKey = JSON.stringify(alimentationKey)
+  localStorage.setItem('localKey', alimentationKey)
+  let alimentationDesKey = aliments.descriptionKeyWords
+  alimentationDesKey = JSON.stringify(alimentationDesKey)
+  localStorage.setItem('localDesKey', alimentationDesKey)
+  let alimentationSources = aliments.sources
+  alimentationSources = JSON.stringify(alimentationSources)
+  localStorage.setItem('localSource', alimentationSources)
 }
-else if (localThemes == rois) {
-
+else if (localTheme == '"cinema"') {
+  let moviesName = movies.name
+  moviesName = JSON.stringify(moviesName)
+  localStorage.setItem('localName', moviesName)
+  let moviesDescription = movies.description
+  moviesDescription = JSON.stringify(moviesDescription)
+  localStorage.setItem('localDes', moviesDescription)
+  let moviesQuestion = movies.questions
+  moviesQuestion = JSON.stringify(moviesQuestion)
+  localStorage.setItem('localQuest', moviesQuestion)
+  let moviesKey = movies.keyWords
+  moviesKey = JSON.stringify(moviesKey)
+  localStorage.setItem('localKey', moviesKey)
+  let moviesDesKey = movies.descriptionKeyWords
+  moviesDesKey = JSON.stringify(moviesDesKey)
+  localStorage.setItem('localDesKey', moviesDesKey)
+  let moviesSources = movies.sources
+  moviesSources = JSON.stringify(moviesSources)
+  localStorage.setItem('localSource', moviesSources)
+}
+else if (localTheme == '"pays"') {
+  let countriesName = countries.name
+  countriesName = JSON.stringify(countriesName)
+  localStorage.setItem('localName', countriesName)
+  let countriesDescription = countries.description
+  countriesDescription = JSON.stringify(countriesDescription)
+  localStorage.setItem('localDes', countriesDescription)
+  let countriesQuestion = countries.questions
+  countriesQuestion = JSON.stringify(countriesQuestion)
+  localStorage.setItem('localQuest', countriesQuestion)
+  let countriesKey = countries.keyWords
+  countriesKey = JSON.stringify(countriesKey)
+  localStorage.setItem('localKey', countriesKey)
+  let countriesDesKey = countries.descriptionKeyWords
+  countriesDesKey = JSON.stringify(countriesDesKey)
+  localStorage.setItem('localDesKey', countriesDesKey)
+  let countriesSources = countries.sources
+  countriesSources = JSON.stringify(countriesSources)
+  localStorage.setItem('localSource', countriesSources)
+}
+else if (localTheme == '"rois"') {
+  let kingsName = kings.name
+  kingsName = JSON.stringify(kingsName)
+  localStorage.setItem('localName', kingsName)
+  let kingsDescription = kings.description
+  kingsDescription = JSON.stringify(kingsDescription)
+  localStorage.setItem('localDes', kingsDescription)
+  let kingsQuestion = kings.questions
+  kingsQuestion = JSON.stringify(kingsQuestion)
+  localStorage.setItem('localQuest', kingsQuestion)
+  let kingsKey = kings.keyWords
+  kingsKey = JSON.stringify(kingsKey)
+  localStorage.setItem('localKey', kingsKey)
+  let kingsDesKey = kings.descriptionKeyWords
+  kingsDesKey = JSON.stringify(kingsDesKey)
+  localStorage.setItem('localDesKey', kingsDesKey)
+  let kingsSources = kings.sources
+  kingsSources = JSON.stringify(kingsSources)
+  localStorage.setItem('localSource', kingsSources)
 }
 
-let headDb=[]
-let headDbName=[]
-let headDescriptionDb=[]
-let questionsDb=[]
-let questionsDescriptionDb=[]
+
+/***On récupère sous forme de tableau les valeurs du local storage**/
+let localName = localStorage.getItem('localName')
+localName = JSON.parse(localName)
+console.log(localName)
+let localDes = localStorage.getItem('localDes')
+localDes = JSON.parse(localDes)
+let localQuest = localStorage.getItem('localQuest')
+localQuest = JSON.parse(localQuest)
+let localSource = localStorage.getItem('localSource')
+localSource = JSON.parse(localSource)
+let localDesKey = localStorage.getItem('localDesKey')
+localDesKey = JSON.parse(localDesKey)
+let localKey = localStorage.getItem('localKey')
+localKey = JSON.parse(localKey)
+
+let headDb=localSource /**sources img***/
+let headDbName=localName/**nom**/
+let headDescriptionDb=localDesKey/**keyWords**/
+let questionsDb=localQuest/**questions**/
+let questionsDescriptionDb=localKey/**keyWords question**/
+let imageDescription=localDes/**description mot**/
+console.log(headDbName)
 let headPlayZone=document.getElementById('play')
 let errorNumber=0
 let cardsCount=0

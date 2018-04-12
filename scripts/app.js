@@ -105,7 +105,3 @@ for (var i = 0; i < themes.length; i++) {
       localStorage.setItem('localThemes', categories)
     }
   )
-
-
-  let localThemes = localStorage.getItem('localThemes')
-  console.log(localThemes)
