@@ -682,16 +682,22 @@ main.teen div#game div#play {
   padding-left: 60px;
 }
 
-
-main.teen div#game div#play div {
+main.teen div#game div#play div.cards {
   width: 125px;
   height: 200px;
   border-radius: 20px;
   background-color: white;
-  padding-left: 10px;
-  margin-bottom: 20px;
-  border: black solid 2px;
+  padding:10px;
+  margin:0 15px 20px 15px;
   transition: background-color 0.1s ease-in;
+  text-align: center;
+}
+
+main.teen div#game div#play div.cards span.description{
+  font-family: 'letters for learners';
+  font-size:30px;
+  display: inline;
+  color:#000000;
 }
 
 main.teen div#game div#play div:hover {
@@ -718,6 +724,10 @@ main.teen div#game div#play div.icons_social {
 
 main.teen div#game div#play a {
   display: none;
+}
+
+main.teen div#game div#play div.cards img.blue_monster{
+  width:80%;
 }
 
 main.teen div#game div#win {
@@ -797,7 +807,7 @@ main.teen div#game div#win div#replay a:hover {
   transition: background-color 0.1s ease-in;
 }
 
-main.teen div#game a {
+main.teen div#game input {
   background-color: #84A58E;
   width: 23%;
   height: 40px;
@@ -807,11 +817,14 @@ main.teen div#game a {
   margin-right: 40px;
   transition: background-color 0.1s ease-in;
   text-align: center;
-  font-size: 30px;
-  padding-top: 10px;
+  font-size: 20px;
+  padding-top: 5px;
+  color: white;
+  margin-bottom: 10px;
+  border: none;
 }
 
-main.teen div#game a:hover {
+main.teen div#game input:hover {
   background-color: #130f40;
   transition: background-color 0.1s ease-in;
 }
@@ -846,6 +859,18 @@ main.teen div#game div#informations p{
   color: white;
 }
 
+main.child div#game div#questions input {
+  background-color: #2C4DAA;
+  color:#ffffff;
+  font-family: 'letters for learners';
+  font-size:20px;
+  height: 50px;
+  width: 400px;
+  border-radius: 50px;
+  border:none;
+  transition: background-color 0.1s ease-in;
+}
+
 main.teen div#game div#questions {
   width: 93%;
   height: 10%;
@@ -865,7 +890,7 @@ main.teen div#game div#questions div {
   transition: background-color 0.1s ease-in;
 }
 
-main.teen div#game div#questions div:hover {
+main.teen div#game div#questions input:hover {
   background-color: #130f40;
   transition: background-color 0.1s ease-in;
   cursor: pointer;
