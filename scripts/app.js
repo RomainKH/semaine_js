@@ -1,3 +1,5 @@
+/*****CHOIX AGE******/
+
 let select = document.querySelector('#age form select')
 let varSelect = new Array ()
 let jeune = "jeune"
@@ -6,18 +8,18 @@ let localAge=localStorage.getItem('localAge')
 
 if (select !== null) {
 
-  select.addEventListener(
+  select.addEventListener( /***au click reprend la valeur de l'âge chosi*****/
     "change",
     function() {
       let userChoice = select.options[select.selectedIndex].value
       location.href = "pages/home_page.html"
-      localStorage.setItem('localAge', userChoice)
+      localStorage.setItem('localAge', userChoice) /***store la valeur de l'age de l'utilisateur en localStorage***/
       console.log(userChoice)
     })
 }
 console.log(localAge)
 
-if (localAge < 10) {
+if (localAge < 10) {/***change le thème si age strictement inférieur à 10*****/
   let child = document.querySelectorAll('.teen')
   for (var i = 0; i < child.length; i++) {
     child[i].classList.remove('teen')
@@ -25,7 +27,7 @@ if (localAge < 10) {
   }
 }
 
-else if (10 <= localAge) {
+else if (10 <= localAge) {/*****change le thème pour les enfants de 10 ans et plus****/
   let teen = document.querySelectorAll('.child')
   for (var i = 0; i < teen.length; i++) {
     teen[i].classList.remove('child')
@@ -35,10 +37,7 @@ else if (10 <= localAge) {
 
 /*****CATEGORIES****/
 
-let category = document.querySelector('#category'),
-    themes = category.querySelectorAll('div'),
-    categories = []
-
+/****change les thèmes selon l'âge***/
 if (localAge < 10){
   let themesJeune = ['alimentation','sports','animaux']
   let theme = document.querySelectorAll('#category div')
@@ -55,8 +54,6 @@ if (localAge < 10){
 
     }
   }
-
-
 
 else if (localAge >= 10){
   let themesVieux = ['cinema','pays','rois']
@@ -75,6 +72,10 @@ else if (localAge >= 10){
     }
 }
 
+/****localstorage pour le choix des thèmes*****/
+let category = document.querySelector('#category'),
+    themes = category.querySelectorAll('div'),
+    categories = []
 let boutonUn = document.querySelector('#category div .un'),
     boutonDeux = document.querySelector('#category div .deux'),
     boutonTrois = document.querySelector('#category div .trois')
@@ -83,6 +84,7 @@ for (var i = 0; i < themes.length; i++) {
     categories.push(themes[i].getAttribute('id'))
   }
 
+/****Relie les boutons des liens***/
   boutonUn.addEventListener(
     "click",function(){
       categories = JSON.stringify(categories[0])
