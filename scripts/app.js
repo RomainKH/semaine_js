@@ -1,18 +1,9 @@
-let boutonUn = document.querySelector('#category div .un'),
-    boutonDeux = document.querySelector('#category div .deux'),
-    boutonTrois = document.querySelector('#category div .trois')
-
-var turnObjToArray = function(obj) {
-  return [].map.call(obj, function(element) {
-  return element;
-  })
-}
-
 let select = document.querySelector('#age form select')
 let varSelect = new Array ()
 let jeune = "jeune"
 let vieux = "vieux"
 let localAge=localStorage.getItem('localAge')
+
 if (select !== null) {
 
   select.addEventListener(
@@ -42,12 +33,38 @@ else if (10 <= localAge) {
   }
 }
 
-  let category = document.querySelector('#category'),
-      themes = category.querySelectorAll('div'),
-      categories = []
+/*****CATEGORIES****/
 
-  for (var i = 0; i < themes.length; i++) {
+let category = document.querySelector('#category'),
+    themes = category.querySelectorAll('div'),
+    categories = []
 
+if (localAge < 10){
+  let themesJeune = ['alimentation','sports','animaux']
+  let theme = document.querySelectorAll('#category div')
+
+  for (var i = 0; i < themesJeune.length; i++) {
+    let img = document.createElement('img')
+    img.setAttribute('src',`../images/${themesJeune[i]}.svg`)
+    theme[i].setAttribute('id', themesJeune[i])
+    theme[i].appendChild(img)
+    }
+  }
+
+
+
+
+
+else if (localAge >= 10){
+  let themesVieux = document.createElement('div')
+
+}
+
+let boutonUn = document.querySelector('#category div .un'),
+    boutonDeux = document.querySelector('#category div .deux'),
+    boutonTrois = document.querySelector('#category div .trois')
+
+for (var i = 0; i < themes.length; i++) {
     categories.push(themes[i].getAttribute('id'))
   }
 
