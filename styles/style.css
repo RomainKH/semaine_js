@@ -472,7 +472,7 @@ main.child div#game div#play div.cards {
   border-radius: 20px;
   background-color: white;
   padding:10px;
-  margin:0 15px 20px 15px;
+  margin-bottom: 20px;
   transition: background-color 0.1s ease-in;
   text-align: center;
 }
@@ -688,7 +688,7 @@ main.teen div#game div#play div.cards {
   border-radius: 20px;
   background-color: white;
   padding:10px;
-  margin:0 15px 20px 15px;
+  margin-bottom: 20px;
   transition: background-color 0.1s ease-in;
   text-align: center;
 }
@@ -836,6 +836,7 @@ main.teen div#game div#informations {
   border-radius: 20px;
   float: right;
   margin-top: 125px;
+  margin-bottom: 20px;
   margin-right: 40px;
 }
 
@@ -865,7 +866,7 @@ main.child div#game div#questions input {
   font-family: 'letters for learners';
   font-size:20px;
   height: 50px;
-  width: 400px;
+  width: 450px;
   border-radius: 50px;
   border:none;
   transition: background-color 0.1s ease-in;
