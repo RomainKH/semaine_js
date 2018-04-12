@@ -2,6 +2,11 @@ let boutonUn = document.querySelector('#category div .un'),
     boutonDeux = document.querySelector('#category div .deux'),
     boutonTrois = document.querySelector('#category div .trois')
 
+var turnObjToArray = function(obj) {
+  return [].map.call(obj, function(element) {
+  return element;
+  })
+}
 
 let select = document.querySelector('#age form select')
 let varSelect = new Array ()
@@ -21,7 +26,21 @@ if (select !== null) {
 }
 console.log(localAge)
 
+if (localAge < 10) {
+  let child = document.querySelectorAll('.teen')
+  for (var i = 0; i < child.length; i++) {
+    child[i].classList.remove('teen')
+    child[i].classList.add('child')
+  }
+}
 
+else if (10 <= localAge) {
+  let teen = document.querySelectorAll('.child')
+  for (var i = 0; i < teen.length; i++) {
+    teen[i].classList.remove('child')
+    teen[i].classList.add('teen')
+  }
+}
 
   let category = document.querySelector('#category'),
       themes = category.querySelectorAll('div'),
