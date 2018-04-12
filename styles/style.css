@@ -782,6 +782,25 @@ main.teen div#game div#win div#replay a:hover {
   transition: background-color 0.1s ease-in;
 }
 
+main.teen div#game a {
+  background-color: #84A58E;
+  width: 23%;
+  height: 40px;
+  display: block;
+  float: right;
+  border-radius: 100px;
+  margin-right: 40px;
+  transition: background-color 0.1s ease-in;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+main.teen div#game a:hover {
+  background-color: #130f40;
+  transition: background-color 0.1s ease-in;
+}
+
 main.teen div#game div#informations {
   width: 23%;
   height: 70%;
