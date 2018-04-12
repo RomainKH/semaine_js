@@ -182,6 +182,50 @@ main.child div#man {
   left: 200px;
 }
 
+main.teen div#age {
+  text-align: center;
+  font-size: 50px;
+}
+
+main.teen div#age span {
+  margin-top: 100px;
+  display: block;
+}
+
+main.teen div#age form {
+  margin: 70px auto 0 auto;
+  height: 100px;
+  width: 500px;
+  border-radius: 100px;
+  background-color: #84A58E;
+}
+
+main.teen div#age select {
+  font-family: 'letters for learners';
+  background-color: #84A58E;
+  width: 84%;
+  height: 100%;
+  font-size: 25px;
+  color: white;
+  border: 0px solid white;
+  cursor:pointer;
+}
+
+main.teen div#monster {
+  content: url(../images/man_white.png);
+  width: 200px;
+  position: fixed;
+  bottom: 10px;
+}
+
+main.teen div#man {
+  content: url(../images/man.png);
+  width: 200px;
+  position: fixed;
+  bottom: 0px;
+  left: 200px;
+}
+
 /*home_page-child*/
 
 main.child div#play.child a {
