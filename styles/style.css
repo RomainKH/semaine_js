@@ -883,11 +883,12 @@ main.teen div#game div#questions {
   margin-bottom: 40px;
 }
 
-main.teen div#game div#questions div {
+main.teen div#game div#questions input {
   background-color: #A59595;
   height: 50px;
   width: 400px;
   border-radius: 50px;
+  font-size:17px;
   transition: background-color 0.1s ease-in;
 }
 

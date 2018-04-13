@@ -150,6 +150,8 @@ console.log(headDbName)
 let headPlayZone=document.getElementById('play')
 let errorNumber=0
 let cardsCount=0
+//On choisit aléatoirement 18 cartes et on y instaure un nom, des keywords et une images
+//On retire aussi les cartes utilisées des différentes bases de données pour ne pas la retire
 function randomHeadChoice(headDb,headDbName,headDescriptionDb){
   let headChoice
   let headDesciption
@@ -176,6 +178,10 @@ function randomHeadChoice(headDb,headDbName,headDescriptionDb){
   }
 }
 randomHeadChoice(headDb,headDbName,headDescriptionDb)
+
+
+//On génère aléatoire 3 questions dans 3 boutons pour que l'utilisateur choisisse
+//et on les associes à des keywords pour analyser les choix de l'utilisateur en fonction des questions après
 let questionsZone=document.getElementById('questions')
 function randomQuestions(questionsDb){
   let questionsTook=new Array()
@@ -191,6 +197,10 @@ function randomQuestions(questionsDb){
   }
 }
 randomQuestions(questionsDb,questionsDescriptionDb)
+
+
+//On regarde sur quelle question a cliqué l'utilisateur, et on appelle des fonctions pour analyser
+//et regénérer des questions
 function questionChoice(){
   let questions=document.querySelectorAll('.questions')
   for(let l=0; l<questions.length; l++){
@@ -211,6 +221,10 @@ function questionChoice(){
   }
 }
 questionChoice()
+
+
+//On demande à l'ordinateur de choisir un nombre aléatoire, qui sera la carte n°(choix ordinateur)
+//et on récupère diverses informations comme les keywords
 let cardSelection=headPlayZone.querySelectorAll('img')
 console.log(cardSelection)
 let computerChoiceNumber=Math.round(Math.random()*cardSelection.length)
@@ -218,42 +232,127 @@ let computerChoice=cardSelection[computerChoiceNumber].getAttribute('id')
 let computerChoiceDescription=cardSelection[computerChoiceNumber].classList
 console.log(computerChoiceDescription)
 console.log(computerChoice)
+
+
+//On analyse la question en fonction du choix de l'ordinateur pour répondre OUI ou NON
 function headAnalyze(questionClass){
   console.log(computerChoiceDescription)
-  let result="NON"
+  let result="Réponse : NON"
   for(let i=0; i<computerChoiceDescription.length; i++){
     if(questionClass==computerChoiceDescription[i]){
-      result="OUI"
+      result="Réponse : OUI"
       userChoices(computerChoiceDescription[i],questionClass, result)
     }
     else{
       userChoices(computerChoiceDescription[i],questionClass, result)
     }
   }
-  document.querySelector('#informations').innerHTML=result
+  document.querySelector('#result').setAttribute('value',result)
 }
+
+
+//On analyse la carte choisi en fonction de la question choisie
+//Si la carte possède le même keyword que la question dans les class, et que la réponse à la question est OUI
+//alors on ne peut pas retourner la carte et si on clique dessus on a une erreur. Sinon, on peut la cliquer.
 function userChoices(computerChoiceDescription,questionClass, result){
-  let cardsChose=new Array()
   let cards=headPlayZone.querySelectorAll('div .cards')
   for(let i=0; i<cardSelection.length; i++){
     cards[i].addEventListener('click', function(){
-      if((cardSelection[i].classList.contains(questionClass)==true && result=="OUI") || (cardSelection[i].classList.contains(questionClass)==false && result=="NON")){
-        console.log(cardSelection[i].classList)
-        errorNumber+=1/computerChoiceDescription.length
-        console.log('erreur !')
+      let cardsChose=document.querySelectorAll('.chose')
+      if(cardsCount>14){
+        let buttonFinal=document.querySelector('#validation')
+        for(let k=0; k<3; k++){
+          buttonFinal.style.backgroundColor='#F7BB21'
+        }
       }
-      else if((cardSelection[i].classList.contains(questionClass)==false && result=="OUI") || (cardSelection[i].classList.contains(questionClass)==true && result=="NON")){
+      else if((cardSelection[i].classList.contains(questionClass)==true && result=="Réponse : OUI") || (cardSelection[i].classList.contains(questionClass)==false && result=="Réponse : NON")){
+        console.log(cardSelection[i].classList)
+        errorNumber+=1/cardSelection[i].classList.length
+        document.querySelector('#errors').setAttribute('value',`Nombre d'erreurs : ${Math.floor(errorNumber)}`)
+      }
+      else if((cardSelection[i].classList.contains(questionClass)==false && result=="Réponse : OUI") || (cardSelection[i].classList.contains(questionClass)==true && result=="Réponse : NON")){
         cards[i].style.backgroundColor='#2C4DAA'
         cards[i].classList.add('chose')
         cards[i].querySelector('.description').remove()
         cards[i].querySelector('IMG').classList.add('blue_monster')
         cards[i].querySelector('IMG').src='../images/blue_monster.png'
-        cardsChose.push(cards[i].querySelector('IMG').getAttribute('id'))
-        console.log(cardsChose)
         cardsCount+=1
         console.log(cardsCount)
       }
     })
   }
-  cardsCount=0
+}
+
+//On définit une variable qui contient toutes les cartes
+let hover = document.querySelectorAll('.cards')
+
+//On affiche la popup (gagné ! rejouer ?) quand on gagne avec deux sons
+function winDisplay(hover,win,applauds){
+  for(k=0; k<hover.length; k++){
+    hover[k].remove()
+  }
+  document.querySelector('#questions').remove()
+  document.querySelector('#play').setAttribute('id','win')
+  document.querySelector('h1').innerHTML="Tu as gagné !"
+  document.querySelector("#answer").innerHTML=`Tu as trouvé : ${computerChoice}`
+  win.play()
+  applauds.play()
+}
+
+//On affiche la popup (perdu !, rejouer ?) quand on perd avec un son
+function looseDisplay(hover,loose){
+  for(k=0; k<hover.length; k++){
+    hover[k].remove()
+  }
+  document.querySelector('#questions').remove()
+  document.querySelector('#play').setAttribute('id','win')
+  document.querySelector('h1').innerHTML="Tu as perdu !"
+  document.querySelector("#answer").innerHTML=`La réponse était : ${computerChoice}`
+  loose.play()
+}
+
+
+//On dit à l'utilisateur de faire son choix final, donc de donner la carte tirée par l'ordinateur
+//Si ça correspond, on a la fonction win
+//Sinon, fonction loose
+function chooseFinal(computerChoice){
+  let buttonFinal=document.querySelector('#validation')
+  let win=new Audio('../sounds/win.mp3')
+  let loose=new Audio('../sounds/loose.mp3')
+  let applauds=new Audio('../sounds/applauds.mp3')
+  buttonFinal.addEventListener('click', function(){
+    buttonFinal.style.backgroundColor='#F7BB21'
+    for(let i=0; i<hover.length; i++){
+      hover[i].addEventListener('click', function(){
+        let choiceName=hover[i].querySelector('img').getAttribute('id')
+        if(choiceName==computerChoice){
+          winDisplay(hover,win,applauds)
+        }
+        else{
+          looseDisplay(hover,loose)
+        }
+      })
+    }
+  })
+}
+chooseFinal(computerChoice)
+
+///Variables pour afficher des descriptions d'objets (informations en plus, image...)
+let title = document.querySelector('#informations h2')
+let image = document.querySelector('#informations img')
+let description = document.querySelector('#informations p')
+let imageInformation=document.querySelectorAll('.cards img')
+
+//On les affiche en créant des éléments, avec un mouseover sur la bonne carte
+for (let i = 0; i < hover.length; i++) {
+  hover[i].addEventListener(
+    'mouseover',
+    function(imageDescription) {
+      let displayedImage=imageInformation[i].getAttribute('src')
+      title.appendChild(document.createTextNode(''))
+      image.setAttribute('src', displayedImage)
+      description.innerHTML=""
+      description.appendChild(document.createTextNode(imageDescription[i]))
+    }
+  )
 }
