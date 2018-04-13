@@ -638,6 +638,7 @@ main.child div#game div#informations img{
 
 main.child div#game div#informations p{
   margin: 0 40px;
+  font-size:16px;
 }
 
 main.child div#game div#questions {
@@ -856,7 +857,7 @@ main.teen div#game div#informations img{
 
 main.teen div#game div#informations p{
   margin: 0 40px;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
 }
 

@@ -1,10 +1,8 @@
 let localTheme = localStorage.getItem('localThemes')
-console.log(localTheme)
 
 /***ON REGARDE EN FONCTION DU THEME CE QU'ON IMPORTE DE LA BASE DE DONNEES***/
 if (localTheme == '"animaux"') {
   let animalName = animals.name
-  console.log(animalName)
   animalName = JSON.stringify(animalName)
   localStorage.setItem('localName', animalName)/**on stock les variables de json en local afin des les rappeler par la suite en fonction du thème**/
   let animalDescription = animals.description
@@ -128,7 +126,6 @@ else if (localTheme == '"rois"') {
 /***On récupère sous forme de tableau les valeurs du local storage**/
 let localName = localStorage.getItem('localName')
 localName = JSON.parse(localName)
-console.log(localName)
 let localDes = localStorage.getItem('localDes')
 localDes = JSON.parse(localDes)
 let localQuest = localStorage.getItem('localQuest')
@@ -145,14 +142,13 @@ let headDbName=localName/**nom**/
 let headDescriptionDb=localDesKey/**keyWords**/
 let questionsDb=localQuest/**questions**/
 let questionsDescriptionDb=localKey/**keyWords question**/
-let imageDescription=localDes/**description mot**/
-console.log(headDbName)
+let objectDescription=localDes/**description mot**/
 let headPlayZone=document.getElementById('play')
 let errorNumber=0
 let cardsCount=0
 //On choisit aléatoirement 18 cartes et on y instaure un nom, des keywords et une images
 //On retire aussi les cartes utilisées des différentes bases de données pour ne pas la retire
-function randomHeadChoice(headDb,headDbName,headDescriptionDb){
+function randomHeadChoice(headDb,headDbName,headDescriptionDb,objectDescription){
   let headChoice
   let headDesciption
   for(let i=0; i<18; i++){
@@ -165,6 +161,7 @@ function randomHeadChoice(headDb,headDbName,headDescriptionDb){
     imageHead.setAttribute('src', headChoice)
     imageHead.setAttribute('id',headDbName[randomNumber])
     imageHead.setAttribute('class',headDescriptionDb[randomNumber])
+    imageHead.setAttribute('description',objectDescription[randomNumber])
     headPlayZone.appendChild(divHead)
     divHead.appendChild(imageHead)
     let descriptionSpan=document.createElement('span')
@@ -175,9 +172,10 @@ function randomHeadChoice(headDb,headDbName,headDescriptionDb){
     headDb.splice(randomNumber,1)
     headDescriptionDb.splice(randomNumber,1)
     headDbName.splice(randomNumber,1)
+    objectDescription.splice(randomNumber,1)
   }
 }
-randomHeadChoice(headDb,headDbName,headDescriptionDb)
+randomHeadChoice(headDb,headDbName,headDescriptionDb,objectDescription)
 
 
 //On génère aléatoire 3 questions dans 3 boutons pour que l'utilisateur choisisse
@@ -226,17 +224,13 @@ questionChoice()
 //On demande à l'ordinateur de choisir un nombre aléatoire, qui sera la carte n°(choix ordinateur)
 //et on récupère diverses informations comme les keywords
 let cardSelection=headPlayZone.querySelectorAll('img')
-console.log(cardSelection)
 let computerChoiceNumber=Math.round(Math.random()*cardSelection.length)
 let computerChoice=cardSelection[computerChoiceNumber].getAttribute('id')
 let computerChoiceDescription=cardSelection[computerChoiceNumber].classList
-console.log(computerChoiceDescription)
-console.log(computerChoice)
 
 
 //On analyse la question en fonction du choix de l'ordinateur pour répondre OUI ou NON
 function headAnalyze(questionClass){
-  console.log(computerChoiceDescription)
   let result="Réponse : NON"
   for(let i=0; i<computerChoiceDescription.length; i++){
     if(questionClass==computerChoiceDescription[i]){
@@ -266,7 +260,6 @@ function userChoices(computerChoiceDescription,questionClass, result){
         }
       }
       else if((cardSelection[i].classList.contains(questionClass)==true && result=="Réponse : OUI") || (cardSelection[i].classList.contains(questionClass)==false && result=="Réponse : NON")){
-        console.log(cardSelection[i].classList)
         errorNumber+=1/cardSelection[i].classList.length
         document.querySelector('#errors').setAttribute('value',`Nombre d'erreurs : ${Math.floor(errorNumber)}`)
       }
@@ -277,7 +270,6 @@ function userChoices(computerChoiceDescription,questionClass, result){
         cards[i].querySelector('IMG').classList.add('blue_monster')
         cards[i].querySelector('IMG').src='../images/blue_monster.png'
         cardsCount+=1
-        console.log(cardsCount)
       }
     })
   }
@@ -347,12 +339,13 @@ let imageInformation=document.querySelectorAll('.cards img')
 for (let i = 0; i < hover.length; i++) {
   hover[i].addEventListener(
     'mouseover',
-    function(imageDescription) {
+    function() {
       let displayedImage=imageInformation[i].getAttribute('src')
+      let imageDescription=imageInformation[i].getAttribute('description')
       title.appendChild(document.createTextNode(''))
       image.setAttribute('src', displayedImage)
       description.innerHTML=""
-      description.appendChild(document.createTextNode(imageDescription[i]))
+      description.appendChild(document.createTextNode(imageDescription))
     }
   )
 }

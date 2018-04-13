@@ -17,7 +17,6 @@ if (select !== null) {
       console.log(userChoice)
     })
 }
-console.log(localAge)
 
 if (localAge < 10) {/***change le thème si age strictement inférieur à 10*****/
   let child = document.querySelectorAll('.teen')
