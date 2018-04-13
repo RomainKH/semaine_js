@@ -638,7 +638,7 @@ main.child div#game div#informations img{
 
 main.child div#game div#informations p{
   margin: 0 40px;
-  font-size:16px;
+  font-size:20px;
 }
 
 main.child div#game div#questions {
@@ -656,7 +656,7 @@ main.child div#game div#questions input {
   font-family: 'letters for learners';
   font-size:20px;
   height: 50px;
-  width: 400px;
+  width: 100%;
   border-radius: 50px;
   border:none;
   transition: background-color 0.1s ease-in;
@@ -867,7 +867,7 @@ main.child div#game div#questions input {
   font-family: 'letters for learners';
   font-size:20px;
   height: 50px;
-  width: 450px;
+  width: 100%;
   border-radius: 50px;
   border:none;
   transition: background-color 0.1s ease-in;
@@ -879,7 +879,7 @@ main.teen div#game div#questions {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin-left: 60px;
+  margin-left: 30px;
   margin-right: 40px;
   margin-bottom: 40px;
 }
@@ -887,7 +887,7 @@ main.teen div#game div#questions {
 main.teen div#game div#questions input {
   background-color: #A59595;
   height: 50px;
-  width: 400px;
+  width: 100%;
   border-radius: 50px;
   font-size:17px;
   transition: background-color 0.1s ease-in;

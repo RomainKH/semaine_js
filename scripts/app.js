@@ -14,7 +14,6 @@ if (select !== null) {
       let userChoice = select.options[select.selectedIndex].value
       location.href = "pages/home_page.html"
       localStorage.setItem('localAge', userChoice) /***store la valeur de l'age de l'utilisateur en localStorage***/
-      console.log(userChoice)
     })
 }
 
